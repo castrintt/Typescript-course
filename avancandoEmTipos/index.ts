@@ -73,3 +73,7 @@ const showNumbers = (a: number, b: number, c?: number) => {
 
 showNumbers(1, 2);
 showNumbers(1, 2, 3);
+
+
+
+
