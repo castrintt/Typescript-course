@@ -31,29 +31,36 @@ console.log(itsTrue);
 
 whatItIs = false;
 
-whatItIs = true
+whatItIs = true;
 
 function verifyType(type: boolean) {
   if (type) {
     console.log("é verdadeiro o valor!");
-  }else {
-    console.log('é falso')
+  } else {
+    console.log("é falso");
   }
 }
-verifyType(itsTrue)
-verifyType(itsFalse)
-
+verifyType(itsTrue);
+verifyType(itsFalse);
 
 //annotation and inference
 
 //annotation
 
-const ann: string = 'olá tudo bem?'
-
+const ann: string = "olá tudo bem?";
 
 //inference
 
-let inf = 'teste'
+let inf = "teste";
 
+const myName: string = "Igor";
 
+console.log(`my name is ${myName}`);
 
+const newNumber: number = 1;
+
+const convertNumber: string = newNumber.toString();
+
+const newString: string = `o numero convertido é ${convertNumber}`;
+
+console.log(newString);
