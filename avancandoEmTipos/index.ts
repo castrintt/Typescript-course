@@ -118,7 +118,7 @@ const advancedGreeting = (name: string, lastName?: string): string => {
 console.log(advancedGreeting("matheus", "batistitt"));
 console.log(advancedGreeting("matheus"));
 
-//Union type
+// Union type
 
 let stringOrNumber: string | number = "igor";
 
@@ -129,7 +129,7 @@ stringOrNumber = 1;
 console.log(stringOrNumber);
 
 const arrayAllOptions: Array<number | string | boolean> = ["igor", 23, true];
-//or
+// or
 const otherArrayAllOptions: (number | string | boolean)[] = ["igor", 23, true];
 
 // avançando em Union types --> verificando tipos
@@ -159,3 +159,58 @@ type LOG = boolean | number;
 let userIsLoged: LOG = 0;
 
 userIsLoged = true;
+
+// interfaces
+
+//tipando
+interface Point {
+  x: number;
+  y: number;
+  z: number;
+}
+
+//referenciandoa  tipagem
+const showCords = (obj: Point): string => {
+  return `coordenadas  X: ${obj.x} Coordenadas Y: ${obj.y} Coordenadas Z: ${obj.z}`;
+};
+//referenciando a tipagem
+const objetoTipado: Point = { x: 20, y: 30, z: 50 };
+
+console.log(showCords(objetoTipado));
+
+//alias vs interface
+
+//alias --> imutavel
+// interface --> mutavel
+
+//logo
+
+type newObjectAlias = {
+  name: string;
+  age: number;
+};
+
+//parece um let, só declarar de novo e alterar a estrutura
+interface newObjectInterface {
+  name: string;
+  age: number;
+}
+
+interface newObjectInterface {
+  lastName: string;
+  motherName: string;
+}
+
+//literal types
+
+let test: "testando";
+//não podemos alterar essa variavel, pois ela esta recebendo um tipo especifico(string) e tambem um valor especifico ('testando')
+
+//nesse caso essa função só aceita string e essa string pode ser 3 valores
+const showDirection = (direction: "left" | "right" | "center"): string => {
+  return `A direção escolhida foi ${direction}`;
+};
+
+console.log(showDirection("left"));
+console.log(showDirection("right"));
+console.log(showDirection("center"));

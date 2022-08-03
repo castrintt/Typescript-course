@@ -85,13 +85,13 @@ const advancedGreeting = (name, lastName) => {
 };
 console.log(advancedGreeting("matheus", "batistitt"));
 console.log(advancedGreeting("matheus"));
-//Union type
+// Union type
 let stringOrNumber = "igor";
 console.log(stringOrNumber);
 stringOrNumber = 1;
 console.log(stringOrNumber);
 const arrayAllOptions = ["igor", 23, true];
-//or
+// or
 const otherArrayAllOptions = ["igor", 23, true];
 // avançando em Union types --> verificando tipos
 const functionWithMoreThanOneType = (type) => {
@@ -108,3 +108,20 @@ const showId = (id) => {
 console.log(showId("hsa1ln234"));
 let userIsLoged = 0;
 userIsLoged = true;
+//referenciandoa  tipagem
+const showCords = (obj) => {
+    return `coordenadas  X: ${obj.x} Coordenadas Y: ${obj.y} Coordenadas Z: ${obj.z}`;
+};
+//referenciando a tipagem
+const objetoTipado = { x: 20, y: 30, z: 50 };
+console.log(showCords(objetoTipado));
+//literal types
+let test;
+//não podemos alterar essa variavel, pois ela esta recebendo um tipo especifico(string) e tambem um valor especifico ('testando')
+//nesse caso essa função só aceita string e essa string pode ser 3 valores
+const showDirection = (direction) => {
+    return `A direção escolhida foi ${direction}`;
+};
+console.log(showDirection("left"));
+console.log(showDirection("right"));
+console.log(showDirection("center"));
