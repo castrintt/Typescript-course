@@ -214,3 +214,56 @@ const showDirection = (direction: "left" | "right" | "center"): string => {
 console.log(showDirection("left"));
 console.log(showDirection("right"));
 console.log(showDirection("center"));
+
+//revisando
+
+const n: string = "igor";
+const a: number = 23;
+const t: boolean = true;
+
+const nA: string[] | Array<string> = ["a", "b", "c"];
+const aA: number[] | Array<number> = [1, 2, 3];
+const tA: boolean[] | Array<boolean> = [true, false, true];
+
+let allTheTypes: string | number | boolean = "hello";
+allTheTypes = 1;
+allTheTypes = true;
+
+type Person = {
+  name: string;
+  age: number;
+};
+
+const person: Person = { name: "maria", age: 20 };
+
+interface Persons {
+  name: string;
+  age: number;
+}
+interface Persons {
+  hobbie: string;
+}
+
+const newPerson: Persons = { name: "maria", age: 23, hobbie: "chess" };
+
+let personData: "igor";
+let numberOneOnly: 1;
+
+//non-null assertion operators
+
+const p = document.getElementById("some-p");
+
+console.log(p?.innerText);
+
+//bigint
+
+let bigintTest: bigint;
+
+bigintTest = 100n;
+
+// symbol
+
+let symbolA = Symbol("a");
+let symbolB = Symbol("a");
+
+console.log(symbolA === symbolB); //false

@@ -125,3 +125,27 @@ const showDirection = (direction) => {
 console.log(showDirection("left"));
 console.log(showDirection("right"));
 console.log(showDirection("center"));
+//revisando
+const n = "igor";
+const a = 23;
+const t = true;
+const nA = ["a", "b", "c"];
+const aA = [1, 2, 3];
+const tA = [true, false, true];
+let allTheTypes = "hello";
+allTheTypes = 1;
+allTheTypes = true;
+const person = { name: "maria", age: 20 };
+const newPerson = { name: "maria", age: 23, hobbie: "chess" };
+let personData;
+let numberOneOnly;
+//non-null assertion operators
+const p = document.getElementById("some-p");
+console.log(p?.innerText);
+//bigint
+let bigintTest;
+bigintTest = 100n;
+// symbol
+let symbolA = Symbol("a");
+let symbolB = Symbol("a");
+console.log(symbolA === symbolB); //false
