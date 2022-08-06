@@ -138,3 +138,23 @@ doSomething([1, 2, 4, 5, 6, 7]);
 function showErrorMessage(msg: string): never {
   throw new Error(msg);
 }
+
+//rest operator
+
+function sumAll(...nums: Array<number>) {
+  return nums.reduce((num, sum) => {
+    return num + sum;
+  });
+}
+
+console.log(sumAll(1, 2, 4, 5, 6, 7, 8));
+
+// destructuring
+
+const showProductDetails = (obj: { name: string; price: number }): string => {
+  return `O nome do produto é ${obj.name} e ele custa ${obj.price}`;
+};
+
+const shirt = { name: "t-shirt", price: 49.2 };
+
+console.log(showProductDetails(shirt));
