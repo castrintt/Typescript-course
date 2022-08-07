@@ -154,7 +154,30 @@ const intersection: HumanWithGun = {
   caliber: 44,
 };
 
-
-
 // readonly array
+
+let myArray: ReadonlyArray<string> = ["ola", "como", "vai", "voce"];
+
+console.log(myArray);
+
+//basicamente só consegue mapear esse array
+
+//tuplas
+
+//declarando que o tipo FourNumbers recebe 4 numeros e 1 string na exata ordem denominada a baixo, nada mais nem nada menos
+type FourNumbers = [number, number, string, number, number];
+
+let myNewArray: FourNumbers = [1, 1, "ola", 1, 1];
+
+console.log(myNewArray);
+
+myNewArray[2] = "mudei para string";
+
+console.log(myNewArray);
+
+// tuplas com readonly
+
+type TupleReadOnly = readonly [number, string, number, string];
+
+let myTuple: TupleReadOnly = [1, "ola", 1, "ola"];
 

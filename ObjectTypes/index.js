@@ -75,3 +75,10 @@ const intersection = {
     caliber: 44,
 };
 // readonly array
+let myArray = ["ola", "como", "vai", "voce"];
+console.log(myArray);
+let myNewArray = [1, 1, "ola", 1, 1];
+console.log(myNewArray);
+myNewArray[2] = "mudei para string";
+console.log(myNewArray);
+let myTuple = [1, "ola", 1, "ola"];
