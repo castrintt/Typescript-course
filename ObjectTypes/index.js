@@ -69,3 +69,9 @@ const butterfly = {
     pawns: 0,
     shell: true,
 };
+const intersection = {
+    name: "Castro",
+    type: "Pistol Magnum",
+    caliber: 44,
+};
+// readonly array

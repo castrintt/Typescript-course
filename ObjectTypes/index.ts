@@ -119,7 +119,7 @@ interface Animal {
   pawns: number;
 }
 
-//Insects herda de Animal, ou seja, as propriedades declaradas em Animal são herdadas para insects, logo todo objeto instanciado usando a interface Insects deve conter {type,pawns e shell}, sendo type e pawns propriedades da interface Animal e shell da interface Insects 
+//Insects herda de Animal, ou seja, as propriedades declaradas em Animal são herdadas para insects, logo todo objeto instanciado usando a interface Insects deve conter {type,pawns e shell}, sendo type e pawns propriedades da interface Animal e shell da interface Insects
 interface Insects extends Animal {
   shell: boolean;
 }
@@ -134,4 +134,27 @@ const butterfly: Insects = {
   pawns: 0,
   shell: true,
 };
+
+// intersection types
+
+interface Character {
+  name: string;
+}
+
+interface Gun {
+  type: string;
+  caliber: number;
+}
+
+type HumanWithGun = Character & Gun;
+
+const intersection: HumanWithGun = {
+  name: "Castro",
+  type: "Pistol Magnum",
+  caliber: 44,
+};
+
+
+
+// readonly array
 
