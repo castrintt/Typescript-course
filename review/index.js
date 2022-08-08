@@ -51,3 +51,35 @@ function otherGenericValue(a, b) {
 }
 otherGenericValue(1, 2);
 otherGenericValue(2, 1);
+//                                unknown
+const returnSomeValue = (x) => {
+    if (typeof x === "string") {
+        return `é uma string`;
+    }
+    else if (typeof x === "number") {
+        return x ** x;
+    }
+    else if (typeof x === "boolean") {
+        return true;
+    }
+};
+console.log(returnSomeValue("ola"));
+console.log(returnSomeValue(4));
+console.log(returnSomeValue(false));
+//                              never / void
+// ambos não retornando nada, tipo void não retorna nada, é só uma função que faz alguma coisa ou executa uma rotina
+//never retorna algo que nunca vai acontecer
+const erroMessage = (err) => {
+    throw Error(`error message: ${err}`);
+};
+//                              rest operator
+const arrSomething = (...nums) => {
+    return [...nums];
+};
+console.log(arrSomething(1, 2, 4, 5, 6, 6, 7, 8, 9, 0));
+const destructuringSomething = (obj) => {
+    console.log(obj.name);
+    console.log(obj.age);
+};
+const myObject = { name: "igor", age: 23 };
+destructuringSomething(myObject);
