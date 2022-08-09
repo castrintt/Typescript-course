@@ -9,5 +9,4 @@ class Personagem {
         this.defesa = defesa;
     }
 }
-
 const espartano = new Personagem("Kratos", 100, 200, 90, 100);
