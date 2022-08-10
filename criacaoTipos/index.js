@@ -26,7 +26,7 @@ const filterData = data.map((values) => {
     return values;
 });
 console.log(filterData);
-//                        reduzindo tipos em generics
+//                                 reduzindo tipos em generics
 function showProductName(obj) {
     return `o retorno do produto é: ${obj.name}`;
 }
@@ -43,7 +43,7 @@ const myNewPen = {
 console.log(myCar);
 console.log(myPen);
 console.log(myNewPen);
-//                            type parameters
+//                                    type parameters
 // usamos o extends keyof para indicar q o K é uma key (chave) que pertence ao generic T
 // preciso de K dentro de T, caso contrario é invalido
 function getSomeKey(obj, key) {
@@ -62,7 +62,7 @@ const newCharacter = {
     age: 23,
     hasDriveLicense: false,
 };
-console.log(showCharacterName(newCharacter, "name"));
+console.log(showCharacterName(newCharacter, "hasDriveLicense"));
 //                            typeof type operator
 const userName = "matheus";
 const newUserName = "igor";
@@ -77,3 +77,7 @@ function showKm(km) {
     return `o veiculo tem o km de ${km}`;
 }
 console.log(showKm(newTruck.km)); ///o veiculo tem o km de 10000
+const someVar = 5;
+const myssType = "some text";
+const mySjTypes = "testando";
+const mySjTypes2 = "unimos";

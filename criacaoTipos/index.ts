@@ -7,7 +7,7 @@ function showData<T>(arg: T): string {
 console.log(showData(5));
 console.log(showData("testando generic"));
 
-// review alterando dados dentro de um array de objetos
+//                              review alterando dados dentro de um array de objetos
 
 interface colors {
   color: boolean;
@@ -45,7 +45,7 @@ const filterData: specific = data.map((values) => {
 
 console.log(filterData);
 
-//                        reduzindo tipos em generics
+//                                 reduzindo tipos em generics
 
 function showProductName<T extends { name: string }>(obj: T) {
   return `o retorno do produto é: ${obj.name}`;
@@ -55,7 +55,7 @@ const myObj = { name: "porta", cor: "branca" };
 
 console.log(showProductName(myObj));
 
-//                      interfaces com generics
+//                                  interfaces com generics
 
 interface MyObject<T> {
   name: string;
@@ -81,7 +81,7 @@ console.log(myCar);
 console.log(myPen);
 console.log(myNewPen);
 
-//                            type parameters
+//                                    type parameters
 
 // usamos o extends keyof para indicar q o K é uma key (chave) que pertence ao generic T
 // preciso de K dentro de T, caso contrario é invalido
@@ -115,7 +115,7 @@ const newCharacter: Character = {
   hasDriveLicense: false,
 };
 
-console.log(showCharacterName(newCharacter, "name"));
+console.log(showCharacterName(newCharacter, "hasDriveLicense"));
 
 //                            typeof type operator
 
@@ -146,3 +146,28 @@ function showKm(km: Km) {
 }
 
 console.log(showKm(newTruck.km)); ///o veiculo tem o km de 10000
+
+//              conditional expressions type
+
+interface A {}
+
+interface B extends A {}
+
+type myType = B extends A ? number : string;
+
+const someVar: myType = 5;
+
+//              template literals type
+
+type testA = "text"; // dessa forma esse alias recebe uma string com o valor de text, tudo que for tipado com o type testA deve receber uma string com valor text
+
+type customType = `some ${testA}`;
+
+const myssType: customType = "some text";
+
+type a1 = "testando";
+type a2 = "unimos";
+type a3 = a1 | a2;
+
+const mySjTypes: a3 = "testando";
+const mySjTypes2: a3 = "unimos";

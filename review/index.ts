@@ -152,3 +152,6 @@ const destructuringSomething = (obj: Person): void => {
 const myObject: Person = { name: "igor", age: 23 };
 
 destructuringSomething(myObject);
+
+// review creation types
+
