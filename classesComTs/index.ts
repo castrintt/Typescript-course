@@ -303,3 +303,135 @@ fInstance.changeX = 40; // só podemos alterar a propriedade por meio de um meto
 
 console.log(fInstance.showX);
 fInstance.showProtectedMethod;
+
+//                                  private
+
+class PrivateClass {
+  private name = "Private";
+
+  showName() {
+    return this.name;
+  }
+
+  private privateMethod() {
+    console.log("metodo privado");
+  }
+
+  showMethod() {
+    return this.privateMethod();
+  }
+}
+
+const bObject = new PrivateClass();
+
+console.log(bObject.showName());
+
+bObject.showMethod();
+
+class QualquerCoisa extends PrivateClass {
+  myMethod() {
+    return this.showMethod();
+  }
+}
+
+//                      static
+
+class StaticMembers {
+  static prop = "Teste static";
+
+  static methood() {
+    console.log("metodo acessado pela classe!");
+  }
+}
+
+console.log(StaticMembers.prop);
+
+StaticMembers.methood();
+
+//                      generic class
+
+class Item<T> {
+  constructor(public first: T | T[], public second: T | T[]) {
+    this.first = first;
+    this.second = second;
+  }
+}
+
+const objString = new Item("ola", "hello");
+const objNumber = new Item(1, 2);
+const objBoolean = new Item(true, false);
+const objList = new Item([1, 2, 3, 4], [1, 2, 3, 4]);
+
+//                      parameter properties
+
+class ParametersProperties {
+  constructor(public name: string, private price: number) {
+    this.name = name;
+    this.price = price;
+  }
+
+  get somePrice(): string {
+    return `${this.price}`;
+  }
+}
+
+const newTry = new ParametersProperties("camisa", 30);
+
+console.log(newTry.somePrice);
+
+//                            class expressions
+
+//class anonima
+
+const myClass = class<T> {
+  constructor(public name: T) {
+    this.name = name;
+  }
+};
+
+const pessoa = new myClass("Joao");
+
+console.log(pessoa);
+
+//                      abstração
+
+abstract class AbstractClass {
+  abstract name: string;
+  abstract age: number;
+  abstract abstractMethod(): void;
+
+  get showName(): string {
+    return `${this.name}`;
+  }
+
+  get showAge(): string {
+    return `${this.age}`;
+  }
+}
+
+class PublicClass extends AbstractClass {
+  constructor(public name: string, public age: number) {
+    super();
+    this.name = name;
+    this.age = age;
+  }
+
+  abstractMethod(): void {
+    console.log("hello");
+  }
+}
+
+const myAbstractClass = new PublicClass("igor", 23);
+myAbstractClass.abstractMethod();
+
+//                      relação entre classes
+
+class Dog {
+  name!: string;
+}
+
+class Cat {
+  name!: string;
+}
+
+const doguinho: Dog = new Cat("Gato");
