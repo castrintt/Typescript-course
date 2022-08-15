@@ -434,4 +434,4 @@ class Cat {
   name!: string;
 }
 
-const doguinho: Dog = new Cat("Gato");
+const doguinho: Dog = new Cat();
