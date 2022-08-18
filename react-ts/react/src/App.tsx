@@ -6,6 +6,7 @@ import SecondComponent from "./components/SecondComponent";
 import StateHook from "./components/StateHook";
 import EnumType from "./components/EnumType";
 import Types from "./components/Types";
+import UsingContext from "./components/UsingContext";
 
 export enum Category {
   JS = "JavaScript",
@@ -78,6 +79,7 @@ const App = (): ReactElement => {
         <StateHook />
         <EnumType testEnum={testEnum} setTestEnum={setTestEnum} />
         <Types />
+        <UsingContext />
       </section>
     </div>
   );
