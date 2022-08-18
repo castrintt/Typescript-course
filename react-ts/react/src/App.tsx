@@ -1,9 +1,17 @@
 import "./App.css";
-import React, { ReactElement } from "react";
+import { ReactElement } from "react";
 import { useState } from "react";
 import FirstComponente from "./components/FirstComponente";
 import SecondComponent from "./components/SecondComponent";
 import StateHook from "./components/StateHook";
+import EnumType from "./components/EnumType";
+import Types from "./components/Types";
+
+export enum Category {
+  JS = "JavaScript",
+  TS = "TypeScript",
+  P = "Python",
+}
 
 export type UserInterface = {
   name: string;
@@ -11,12 +19,27 @@ export type UserInterface = {
   isWorking: boolean;
 };
 
-function App(): ReactElement {
+export enum Test {
+  IG = "Igor",
+  IS = "Isabela",
+  TI = "Tiago",
+}
+
+const expectedName: string = Test.IG;
+console.log(expectedName); // 'Tiago'
+
+const App = (): ReactElement => {
+  const [testEnum, setTestEnum] = useState<string>("");
+
   const [user, setUser] = useState<UserInterface>({
     name: "Igor",
     age: 23,
     isWorking: false,
   });
+
+  const tipos = Category.JS;
+
+  console.log(tipos);
 
   const userGreeting = (name?: string): string => {
     if (name) {
@@ -53,9 +76,11 @@ function App(): ReactElement {
         <FirstComponente />
         <SecondComponent user={user} newUser={newUser} newAge={newAge} />
         <StateHook />
+        <EnumType testEnum={testEnum} setTestEnum={setTestEnum} />
+        <Types />
       </section>
     </div>
   );
-}
+};
 
 export default App;
